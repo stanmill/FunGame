@@ -12,37 +12,66 @@
 
 using namespace std;
 
+
 const int WIDTH = 800, HEIGHT = 600;
 
+
 int main(int argc, const char * argv[]) {
-    // creating a window    
     
+    SDL_Surface *imageSurface = NULL;
+    SDL_Surface *windowSurface = NULL;
     
-    // check if the window is created sucessfully
-    if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
-        cout << "Error" << SDL_GetError()<< std::endl;
+    SDL_Init( SDL_INIT_EVERYTHING );
+    
+    SDL_Window *window = SDL_CreateWindow( "Hello SDL World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI );
+    windowSurface = SDL_GetWindowSurface( window );
+    
+    // Check that the window was successfully created
+    if ( NULL == window )
+    {
+        // In the case that the window could not be made...
+        cout << "Could not create window: " << SDL_GetError( ) << std::endl;
+        return 1;
     }
     
-    SDL_Window *window = SDL_CreateWindow("Hello window",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI);
-    
-    if(NULL == window){
-        cout << "unable to create window";
-        return EXIT_FAILURE;
+    if( !( IMG_Init( IMG_INIT_JPG ) & IMG_INIT_JPG ) )
+    {
+        cout << "Could not create window: " << IMG_GetError( ) << std::endl;
+        return 1;
     }
-    
     
     SDL_Event windowEvent;
     
-    while (true) {
-        if(SDL_PollEvent(&windowEvent)){
-            if (SDL_QUIT == windowEvent.type) {
+    imageSurface = IMG_Load( "sonic.jpeg" );
+    
+    if ( NULL == imageSurface )
+    {
+        cout << "SDL could not load image! SDL Error: " << SDL_GetError( ) << std::endl;
+    }
+    
+    while ( true )
+    {
+        if ( SDL_PollEvent( &windowEvent ) )
+        {
+            if ( SDL_QUIT == windowEvent.type )
+            {
                 break;
             }
         }
+        
+        SDL_BlitSurface( imageSurface, NULL, windowSurface, NULL );
+        
+        SDL_UpdateWindowSurface( window );
     }
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+    
+    SDL_FreeSurface( imageSurface );
+    SDL_FreeSurface( windowSurface );
+    
+    imageSurface = NULL;
+    windowSurface = NULL;
+    
+    SDL_DestroyWindow( window );
+    SDL_Quit( );
     
     return EXIT_SUCCESS;
-    
 }
