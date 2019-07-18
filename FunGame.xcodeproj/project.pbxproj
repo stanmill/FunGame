@@ -10,6 +10,7 @@
 		95C53A2922DCBB9E002912C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C53A2822DCBB9E002912C4 /* main.cpp */; };
 		95C53A3122DCBD26002912C4 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */; };
 		95C53A3322DE36D6002912C4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3222DE36D6002912C4 /* libSDL2_image-2.0.0.dylib */; };
+		95C53A3622E0AC25002912C4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C53A3422E0AC25002912C4 /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		95C53A2822DCBB9E002912C4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9_1/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		95C53A3222DE36D6002912C4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2_image/2.0.4/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
+		95C53A3422E0AC25002912C4 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		95C53A3522E0AC25002912C4 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				95C53A2822DCBB9E002912C4 /* main.cpp */,
+				95C53A3422E0AC25002912C4 /* Game.cpp */,
+				95C53A3522E0AC25002912C4 /* Game.hpp */,
 			);
 			path = FunGame;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C53A2922DCBB9E002912C4 /* main.cpp in Sources */,
+				95C53A3622E0AC25002912C4 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
