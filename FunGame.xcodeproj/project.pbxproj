@@ -10,6 +10,7 @@
 		9542337622E1FD4100F02F10 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542337422E1FD4100F02F10 /* TextureManager.cpp */; };
 		9542337922E2013E00F02F10 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542337722E2013E00F02F10 /* GameObject.cpp */; };
 		9542337C22E23D3900F02F10 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542337A22E23D3900F02F10 /* Map.cpp */; };
+		9542338222E2776500F02F10 /* Components.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542338022E2776500F02F10 /* Components.hpp */; };
 		95C53A2922DCBB9E002912C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C53A2822DCBB9E002912C4 /* main.cpp */; };
 		95C53A3122DCBD26002912C4 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */; };
 		95C53A3322DE36D6002912C4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3222DE36D6002912C4 /* libSDL2_image-2.0.0.dylib */; };
@@ -29,7 +30,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9542336C22E1745000F02F10 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		9542337422E1FD4100F02F10 /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
 		9542337522E1FD4100F02F10 /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
 		9542337722E2013E00F02F10 /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		9542337A22E23D3900F02F10 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		9542337B22E23D3900F02F10 /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		9542337E22E2483300F02F10 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		9542338022E2776500F02F10 /* Components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Components.hpp; sourceTree = "<group>"; };
+		9542338122E2776500F02F10 /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
 		95C53A2522DCBB9E002912C4 /* FunGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C53A2822DCBB9E002912C4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9_1/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -58,18 +60,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9542336B22E16E6D00F02F10 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				9542336C22E1745000F02F10 /* player.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		95C53A1C22DCBB9E002912C4 = {
 			isa = PBXGroup;
 			children = (
-				9542336B22E16E6D00F02F10 /* Assets */,
 				9542337E22E2483300F02F10 /* Assets */,
 				95C53A2722DCBB9E002912C4 /* FunGame */,
 				95C53A2622DCBB9E002912C4 /* Products */,
@@ -97,6 +90,8 @@
 				9542337822E2013E00F02F10 /* GameObject.hpp */,
 				9542337A22E23D3900F02F10 /* Map.cpp */,
 				9542337B22E23D3900F02F10 /* Map.hpp */,
+				9542338022E2776500F02F10 /* Components.hpp */,
+				9542338122E2776500F02F10 /* ECS.hpp */,
 			);
 			path = FunGame;
 			sourceTree = "<group>";
@@ -169,6 +164,7 @@
 				9542337922E2013E00F02F10 /* GameObject.cpp in Sources */,
 				9542337C22E23D3900F02F10 /* Map.cpp in Sources */,
 				95C53A2922DCBB9E002912C4 /* main.cpp in Sources */,
+				9542338222E2776500F02F10 /* Components.hpp in Sources */,
 				95C53A3622E0AC25002912C4 /* Game.cpp in Sources */,
 				9542337622E1FD4100F02F10 /* TextureManager.cpp in Sources */,
 			);
