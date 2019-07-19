@@ -8,10 +8,11 @@
 
 #include "Game.hpp"
 #include "TextureManager.hpp"
+#include "GameObject.hpp"
 using namespace std;
 
-SDL_Texture* playertex;
-SDL_Rect srcR, desR;
+GameObject* player;
+
 
 Game::Game(){
     
@@ -45,7 +46,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     // render player
-    playertex = TextureManager::LoadTexture("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png", renderer);
+    player = new GameObject("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png", renderer,0,0);
    
 }
 
@@ -64,19 +65,15 @@ void Game::handleEvents(){
 }
 
 void Game::update(){
-    count++;
     
-    desR.h = 64;
-    desR.w = 64;
-    desR.x = count;
-    cout << count << endl;
+    player->update();
     
 }
 
 void Game::render(){
     
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, playertex, NULL, &desR); // render image
+    player->render();
     SDL_RenderPresent(renderer);
     
 }

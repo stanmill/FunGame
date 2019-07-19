@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9542337622E1FD4100F02F10 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542337422E1FD4100F02F10 /* TextureManager.cpp */; };
+		9542337922E2013E00F02F10 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9542337722E2013E00F02F10 /* GameObject.cpp */; };
 		95C53A2922DCBB9E002912C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C53A2822DCBB9E002912C4 /* main.cpp */; };
 		95C53A3122DCBD26002912C4 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */; };
 		95C53A3322DE36D6002912C4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C53A3222DE36D6002912C4 /* libSDL2_image-2.0.0.dylib */; };
@@ -30,6 +31,8 @@
 		9542336C22E1745000F02F10 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		9542337422E1FD4100F02F10 /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
 		9542337522E1FD4100F02F10 /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		9542337722E2013E00F02F10 /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		9542337822E2013E00F02F10 /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		95C53A2522DCBB9E002912C4 /* FunGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C53A2822DCBB9E002912C4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9_1/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				95C53A3522E0AC25002912C4 /* Game.hpp */,
 				9542337422E1FD4100F02F10 /* TextureManager.cpp */,
 				9542337522E1FD4100F02F10 /* TextureManager.hpp */,
+				9542337722E2013E00F02F10 /* GameObject.cpp */,
+				9542337822E2013E00F02F10 /* GameObject.hpp */,
 			);
 			path = FunGame;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9542337922E2013E00F02F10 /* GameObject.cpp in Sources */,
 				95C53A2922DCBB9E002912C4 /* main.cpp in Sources */,
 				95C53A3622E0AC25002912C4 /* Game.cpp in Sources */,
 				9542337622E1FD4100F02F10 /* TextureManager.cpp in Sources */,
