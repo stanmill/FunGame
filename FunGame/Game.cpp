@@ -10,6 +10,7 @@
 using namespace std;
 
 SDL_Texture* playertex;
+SDL_Rect srcR, desR;
 
 Game::Game(){
     
@@ -64,6 +65,10 @@ void Game::handleEvents(){
 
 void Game::update(){
     count++;
+    
+    desR.h = 64;
+    desR.w = 64;
+    desR.x = count;
     cout << count << endl;
     
 }
@@ -71,7 +76,7 @@ void Game::update(){
 void Game::render(){
     
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, playertex, NULL, NULL); // render image
+    SDL_RenderCopy(renderer, playertex, NULL, &desR); // render image
     SDL_RenderPresent(renderer);
     
 }
