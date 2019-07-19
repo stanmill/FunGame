@@ -27,6 +27,7 @@ public:
     bool running(){ return isRunning;}
 
 private:
+    int count;
     bool isRunning;
     SDL_Window *window;
     SDL_Renderer *renderer;

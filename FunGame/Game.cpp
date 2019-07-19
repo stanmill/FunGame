@@ -57,6 +57,8 @@ void Game::handleEvents(){
 }
 
 void Game::update(){
+    count++;
+    cout << count << endl;
     
 }
 

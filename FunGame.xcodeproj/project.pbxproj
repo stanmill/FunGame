@@ -47,9 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9542336B22E16E6D00F02F10 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		95C53A1C22DCBB9E002912C4 = {
 			isa = PBXGroup;
 			children = (
+				9542336B22E16E6D00F02F10 /* Assets */,
 				95C53A2722DCBB9E002912C4 /* FunGame */,
 				95C53A2622DCBB9E002912C4 /* Products */,
 				95C53A2F22DCBD26002912C4 /* Frameworks */,
