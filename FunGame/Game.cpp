@@ -9,6 +9,8 @@
 #include "Game.hpp"
 using namespace std;
 
+SDL_Texture* playertex;
+
 Game::Game(){
     
 }
@@ -40,6 +42,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
+    // render player
+    SDL_Surface* tempsf = IMG_Load("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
+    playertex = SDL_CreateTextureFromSurface(renderer, tempsf);
+    SDL_FreeSurface(tempsf);
 }
 
 void Game::handleEvents(){
@@ -65,6 +71,7 @@ void Game::update(){
 void Game::render(){
     
     SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, playertex, NULL, NULL); // render image
     SDL_RenderPresent(renderer);
     
 }
