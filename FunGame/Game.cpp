@@ -9,9 +9,11 @@
 #include "Game.hpp"
 #include "TextureManager.hpp"
 #include "GameObject.hpp"
+#include "Map.hpp"
 using namespace std;
 
 GameObject* player;
+Map* map;
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -49,7 +51,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
     // render player
     player = new GameObject("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png",0,0);
-   
+    map = new Map();
 }
 
 void Game::handleEvents(){
@@ -75,6 +77,7 @@ void Game::update(){
 void Game::render(){
     
     SDL_RenderClear(renderer);
+    map->drawMap();
     player->render();
     SDL_RenderPresent(renderer);
     
