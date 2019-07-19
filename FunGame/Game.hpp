@@ -22,16 +22,16 @@ public:
     
     void handleEvents();
     void update();
+    bool running(){ return isRunning;}
     void render();
     void clean();
     
-    bool running(){ return isRunning;}
+    static SDL_Renderer* renderer;
 
 private:
     int count;
     bool isRunning;
     SDL_Window *window;
-    SDL_Renderer *renderer;
 };
 
 #endif /* Game_hpp */

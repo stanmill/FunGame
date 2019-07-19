@@ -13,6 +13,8 @@ using namespace std;
 
 GameObject* player;
 
+SDL_Renderer* Game::renderer = nullptr;
+
 
 Game::Game(){
     
@@ -46,7 +48,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     // render player
-    player = new GameObject("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png", renderer,0,0);
+    player = new GameObject("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png",0,0);
    
 }
 
