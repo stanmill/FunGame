@@ -7,6 +7,7 @@
 //
 
 #include "Game.hpp"
+#include "TextureManager.hpp"
 using namespace std;
 
 SDL_Texture* playertex;
@@ -44,9 +45,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     // render player
-    SDL_Surface* tempsf = IMG_Load("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
-    playertex = SDL_CreateTextureFromSurface(renderer, tempsf);
-    SDL_FreeSurface(tempsf);
+    playertex = TextureManager::LoadTexture("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png", renderer);
+   
 }
 
 void Game::handleEvents(){
