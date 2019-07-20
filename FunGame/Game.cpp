@@ -8,19 +8,16 @@
 
 #include "Game.hpp"
 #include "TextureManager.hpp"
-#include "GameObject.hpp"
 #include "Map.hpp"
-#include "ECS.hpp"
-#include "Components.hpp"
+#include "ECS/Components.hpp"
 using namespace std;
 
-GameObject* player;
 Map* map;
 
 SDL_Renderer* Game::renderer = nullptr;
 
 Manager manager;
-auto& newPlayer(manager.addEntity());
+auto& player(manager.addEntity());
 
 Game::Game(){
     
@@ -53,13 +50,12 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
-    // render player
-    player = new GameObject("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png",0,0);
+    // render map
     map = new Map();
     
-    // testing position
-    newPlayer.addComponent<PositionComponent>();
-    newPlayer.getComponent<PositionComponent>().setPos(500, 500);
+    // render player
+    player.addComponent<PositionComponent>();
+    player.addComponent<SpriteComponent>("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
 
 }
 
@@ -74,33 +70,27 @@ void Game::handleEvents(){
         default:
             break;
     }
-    
 }
 
 void Game::update(){
-    
-    player->update();
+    manager.refresh();
     manager.update();
-    cout << newPlayer.getComponent<PositionComponent>().x();
-    cout << newPlayer.getComponent<PositionComponent>().y();
-
     
+    if(player.getComponent<PositionComponent>().x() >100){
+        player.getComponent<SpriteComponent>().setTex("/Users/stanleypena/Documents/GitHub/FunGame/Assets/enemy.png");
+    }
 }
 
 void Game::render(){
-    
     SDL_RenderClear(renderer);
     map->drawMap();
-    player->render();
+    manager.draw();
     SDL_RenderPresent(renderer);
-    
 }
 
 void Game::clean(){
-    
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
     cout << "Game Cleaned \n";
-    
 }

@@ -29,7 +29,6 @@ private:
     SDL_Texture* water;
     
     int map[20][25];
-
 };
 
 #endif /* Map_hpp */

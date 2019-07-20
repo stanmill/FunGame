@@ -14,7 +14,6 @@ GameObject::GameObject(const char* textureSheet, int x, int y){
     
     xpos = x;
     ypos = y;
-    
 }
 
 void GameObject::update(){
@@ -33,7 +32,6 @@ void GameObject::update(){
     desRec.y = ypos;
     desRec.w = srcRec.w * 2;
     desRec.h = srcRec.h * 2;
-    
 }
 
 void GameObject::render(){

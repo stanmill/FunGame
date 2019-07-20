@@ -78,8 +78,6 @@ void Map::drawMap(){
                     break;
             }
         }
-    }
-    
-    
+    }    
 }
 

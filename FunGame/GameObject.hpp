@@ -26,7 +26,6 @@ private:
     
     SDL_Texture* objTexture;
     SDL_Rect srcRec, desRec;
-    
 };
 
 #endif /* GameObject_hpp */
