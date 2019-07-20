@@ -10,7 +10,7 @@
 
 #include "ECS.hpp"
 #include <iostream>
-#include "PositionComponent.hpp"
+#include "TransformComponent.hpp"
 #include "SpriteComponent.hpp"
 
 

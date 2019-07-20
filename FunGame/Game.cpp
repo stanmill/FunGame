@@ -10,6 +10,7 @@
 #include "TextureManager.hpp"
 #include "Map.hpp"
 #include "ECS/Components.hpp"
+#include "Vector2D.hpp"
 using namespace std;
 
 Map* map;
@@ -54,7 +55,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     map = new Map();
     
     // render player
-    player.addComponent<PositionComponent>();
+    player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
 
 }
@@ -75,8 +76,10 @@ void Game::handleEvents(){
 void Game::update(){
     manager.refresh();
     manager.update();
-    
-    if(player.getComponent<PositionComponent>().x() >100){
+    // the first number determines the speed second determines y cordinate
+    player.getComponent<TransformComponent>().position.add(Vector2D(1,2));
+    // makes the player switch sprites
+    if(player.getComponent<TransformComponent>().position.x >100){
         player.getComponent<SpriteComponent>().setTex("/Users/stanleypena/Documents/GitHub/FunGame/Assets/enemy.png");
     }
 }
