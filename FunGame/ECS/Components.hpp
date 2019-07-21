@@ -12,6 +12,6 @@
 #include <iostream>
 #include "TransformComponent.hpp"
 #include "SpriteComponent.hpp"
-
+#include "KeyboardController.hpp"
 
 #endif /* Components_hpp */

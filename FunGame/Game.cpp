@@ -16,6 +16,8 @@ using namespace std;
 Map* map;
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::event;
+
 
 Manager manager;
 auto& player(manager.addEntity());
@@ -58,10 +60,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
 
+    player.addComponent<KeyboardController>();
 }
 
 void Game::handleEvents(){
-    SDL_Event event;
     SDL_PollEvent(&event);
     switch (event.type) {
         case SDL_QUIT:
@@ -76,12 +78,6 @@ void Game::handleEvents(){
 void Game::update(){
     manager.refresh();
     manager.update();
-    // the first number determines the speed second determines y cordinate
-    player.getComponent<TransformComponent>().position.add(Vector2D(1,2));
-    // makes the player switch sprites
-    if(player.getComponent<TransformComponent>().position.x >100){
-        player.getComponent<SpriteComponent>().setTex("/Users/stanleypena/Documents/GitHub/FunGame/Assets/enemy.png");
-    }
 }
 
 void Game::render(){
