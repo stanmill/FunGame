@@ -12,6 +12,11 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h> //image library
+#include <vector>
+
+using namespace std;
+
+class ColliderComponent;
 
 class Game {
     
@@ -28,6 +33,7 @@ public:
     
     static SDL_Renderer* renderer;
     static SDL_Event event;
+    static vector<ColliderComponent*> colliders;
 
 private:
     int count;

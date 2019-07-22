@@ -19,10 +19,17 @@ Map* map;
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
 
+vector<ColliderComponent*> Game::colliders;
+
 
 Manager manager;
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
+
+auto&tile0(manager.addEntity());
+auto&tile1(manager.addEntity());
+auto&tile2(manager.addEntity());
+
 
 Game::Game(){
     
@@ -58,6 +65,15 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     // render map
     map = new Map();
     
+    tile0.addComponent<TileComponent>(200,200,32,32,0);
+    tile1.addComponent<TileComponent>(250,250,32,32,1);
+    tile2.addComponent<TileComponent>(150,150,32,32,2);
+    tile1.addComponent<ColliderComponent>("dirt");
+    tile2.addComponent<ColliderComponent>("grass");
+
+
+
+    
     // render player
     player.addComponent<TransformComponent>(2);
     player.addComponent<SpriteComponent>("/Users/stanleypena/Documents/GitHub/FunGame/Assets/player.png");
@@ -85,10 +101,9 @@ void Game::update(){
     manager.refresh();
     manager.update();
     
-    if(Collision::AABB(player.getComponent<ColliderComponent>().collider, wall.getComponent<ColliderComponent>().collider)){
-        player.getComponent<TransformComponent>().scale = 1; // changes player size when it collides
-        player.getComponent<TransformComponent>().velocity * -1;
-        cout << "wall hit \n";
+    for (auto cc : colliders){
+      
+        Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
     }
     
     // changes the sprite
@@ -99,7 +114,7 @@ void Game::update(){
 
 void Game::render(){
     SDL_RenderClear(renderer);
-    map->drawMap();
+   // map->drawMap();
     manager.draw();
     SDL_RenderPresent(renderer);
 }

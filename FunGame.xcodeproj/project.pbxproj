@@ -49,6 +49,7 @@
 		9542338A22E5576700F02F10 /* ColliderComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColliderComponent.hpp; sourceTree = "<group>"; };
 		9542338B22E55D2F00F02F10 /* Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
 		9542338C22E55D2F00F02F10 /* Collision.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collision.hpp; sourceTree = "<group>"; };
+		9542338E22E6560900F02F10 /* TileComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileComponent.hpp; sourceTree = "<group>"; };
 		95C53A2522DCBB9E002912C4 /* FunGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C53A2822DCBB9E002912C4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		95C53A3022DCBD26002912C4 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9_1/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 				9542338522E3AC8800F02F10 /* TransformComponent.hpp */,
 				9542338922E4FDE000F02F10 /* KeyboardController.hpp */,
 				9542338A22E5576700F02F10 /* ColliderComponent.hpp */,
+				9542338E22E6560900F02F10 /* TileComponent.hpp */,
 			);
 			path = ECS;
 			sourceTree = "<group>";
