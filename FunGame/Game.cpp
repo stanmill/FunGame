@@ -16,7 +16,7 @@ using namespace std;
 
 Map* map;
 
-SDL_Renderer* Game::renderer = nullptr;
+SDL_Renderer* sGame::renderer = nullptr;
 SDL_Event Game::event;
 
 vector<ColliderComponent*> Game::colliders;
@@ -25,10 +25,6 @@ vector<ColliderComponent*> Game::colliders;
 Manager manager;
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
-
-auto&tile0(manager.addEntity());
-auto&tile1(manager.addEntity());
-auto&tile2(manager.addEntity());
 
 
 Game::Game(){
@@ -65,14 +61,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     // render map
     map = new Map();
     
-    tile0.addComponent<TileComponent>(200,200,32,32,0);
-    tile1.addComponent<TileComponent>(250,250,32,32,1);
-    tile2.addComponent<TileComponent>(150,150,32,32,2);
-    tile1.addComponent<ColliderComponent>("dirt");
-    tile2.addComponent<ColliderComponent>("grass");
-
-
-
+    //Map::loadMap("/Users/stanleypena/Documents/GitHub/FunGame/Assets/tiled16x16.map.tmx",16,16);
     
     // render player
     player.addComponent<TransformComponent>(2);
@@ -83,6 +72,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     wall.addComponent<TransformComponent>(300.0f,300.0f, 300,20, 1);
     wall.addComponent<SpriteComponent>("/Users/stanleypena/Documents/GitHub/FunGame/Assets/ground.png");
     wall.addComponent<ColliderComponent>("wall");
+    
 }
 
 void Game::handleEvents(){
@@ -114,7 +104,6 @@ void Game::update(){
 
 void Game::render(){
     SDL_RenderClear(renderer);
-   // map->drawMap();
     manager.draw();
     SDL_RenderPresent(renderer);
 }
@@ -124,4 +113,12 @@ void Game::clean(){
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
     cout << "Game Cleaned \n";
+}
+
+void Game::addTile(int id, int x, int y){
+    auto&tile(manager.addEntity());
+    tile.addComponent<TileComponent>(x, y,  32, 32, id);
+    
+   
+    
 }

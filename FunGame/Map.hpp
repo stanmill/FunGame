@@ -9,8 +9,10 @@
 #ifndef Map_hpp
 #define Map_hpp
 
-#include <stdio.h>
-#include "Game.hpp"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Map {
     
@@ -18,17 +20,10 @@ public:
     Map();
     ~Map();
     
-    void drawMap();
-    void loadMap(int arr[20][25]);
+  static void loadMap(string path, int sizeX, int sizeY);
     
 private:
-    SDL_Rect src, dest;
     
-    SDL_Texture* dirt;
-    SDL_Texture* grass;
-    SDL_Texture* water;
-    
-    int map[20][25];
 };
 
 #endif /* Map_hpp */
